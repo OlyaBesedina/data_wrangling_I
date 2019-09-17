@@ -51,7 +51,11 @@ litters_data = read_csv(
 ```{r}
 library(readxl)
 # can put this library at the beggining
-mlb11_data = read_excel(path = "./data/mlb11.xlsx")
+mlb11_data_subset = read_excel(
+  path = "./data/mlb11.xlsx",
+  range = "A1:D7")
+
+write_csv(mlb11_data_subset, path = "./data/mlb_subset.csv")
 ```
 
 ## Read in SAS
@@ -59,6 +63,7 @@ mlb11_data = read_excel(path = "./data/mlb11.xlsx")
 pulse_data = haven::read_sas("./data/public_pulse_data.sas7bdat") 
 ```
 
+**Use relative path to read files.** 
 
 
 
