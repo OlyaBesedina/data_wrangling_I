@@ -9,6 +9,7 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
+
 ```
 
 ## Load data into R
@@ -18,4 +19,22 @@ litters_data = janitor::clean_names((litters_data))
 
 
 ```
+If you include library(janitor) at the beggining, then you do not have to use janitor:: part, but do not do it because same commands in different packages can confuse R. 
+
+
+
+## Assesment 1 - load pups data
+```{r}
+pups_data = read_csv(file = "./data/FAS_pups.csv")
+pups_data = janitor::clean_names(pups_data)
+
+```
+
+
+
+
+
+
+
+
 
