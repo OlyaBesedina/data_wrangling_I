@@ -64,7 +64,7 @@ pulse_data = haven::read_sas("./data/public_pulse_data.sas7bdat")
 ```
 
 **Use relative path to read files.** 
-dad
+
 
 
 
