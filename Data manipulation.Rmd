@@ -51,6 +51,38 @@ litters_data = select(litters_data, GROUP = group, litter_number)
 # now your litters data is only those columns that you selected( group and litters_number)
 ```
 
+## Filtering 
+```{r}
+filter(litters_data, group == "Con7")
+# logical operator, checks if it is TRUE; keeps rows for which it is TRUE
+# "==" asks Are these 2 things equal to each other? 
+# "=" sign assigns value to a name
+
+filter(litters_data, gd_of_birth == 20)
+# filter for numeric variable
+
+filter(litters_data, gd_of_birth < 20)
+
+filter(litters_data, gd_of_birth >= 20)
+
+filter(litters_data, pups_born_alive < 6, group == "Con7")
+# filter for both of these
+# "!=" Not equal to, "!" negates the whole statement
+# group %in% c("Con7", "Con8") show those for which at least one is true
+# 
+
+filter(litters_data, pups_born_alive >=4, pups_born_alive <=6)
+
+filter(litters_data, gd0_weight + gd18_weight < 70)
+
+filter(litters_data, gd0_weight > gd18_weight)
+
+filter(litters_data, is.na(gd0_weight))
+# Dont do this, instead use drop_na
+
+drop_na(litters_data, gd0_weight)
+```
+
 
 
 
